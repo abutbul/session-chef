@@ -16,6 +16,7 @@ Vagrant.configure(2) do |config|
   config.vm.provision 'chef_solo' do |chef|
     chef.add_recipe 'my-first-cookbook'
     chef.add_recipe 'my-first-cookbook::mkfile'
+    chef.add_recipe 'my-first-cookbook::unzip'
     chef.cookbooks_path = 'cookbooks'
   end
 end
