@@ -19,5 +19,3 @@ cookbook_file '/opt/opsSchool/david.txt' do
   action :create
   owner 'root'
 end
-
-
