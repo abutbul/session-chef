@@ -1,0 +1,16 @@
+    <VirtualHost *:80>
+      ServerName /
+      WSGIDaemonProcess /AAR user=<%=node['mycookbook']['apache']['user']%> group=<%=node['mycookbook']['apache']['group']%> threads=5
+      WSGIProcessGroup /AAR
+      WSGIScriptAlias / /var/www/AAR/awesomeapp.wsgi
+
+      <Directory <%=node['mycookbook']['apache']['app_dir']%>>
+        WSGIApplicationGroup %{GLOBAL}
+        WSGIScriptReloading On
+        Order deny,allow
+        Allow from all
+      </Directory>
+      
+      CustomLog ${APACHE_LOG_DIR}/access.log combined
+      ServerAdmin ops@example.com
+    </VirtualHost>
