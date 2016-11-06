@@ -9,6 +9,7 @@
 node['mycookbook']['packages'].each do |pkg|
   package pkg do
     action :install
+    options '--force-yes'
 	not_if "dpkg -l | grep #{pkg} | grep ii" 
   end
 end

@@ -1,0 +1,25 @@
+I, [2016-11-06T21:34:13.070370 #19316]  INFO -- default-ubuntu-1404: -----> Verifying <default-ubuntu-1404>...
+I, [2016-11-06T21:34:13.071326 #19316]  INFO -- default-ubuntu-1404: Preparing files for transfer
+I, [2016-11-06T21:34:13.750029 #19316]  INFO -- default-ubuntu-1404: -----> Busser installation detected (busser)
+I, [2016-11-06T21:34:13.750522 #19316]  INFO -- default-ubuntu-1404: Installing Busser plugins: busser-serverspec
+I, [2016-11-06T21:34:15.792694 #19316]  INFO -- default-ubuntu-1404: Plugin serverspec already installed
+I, [2016-11-06T21:34:16.124379 #19316]  INFO -- default-ubuntu-1404: Removing /tmp/verifier/suites/serverspec
+I, [2016-11-06T21:34:16.136466 #19316]  INFO -- default-ubuntu-1404: Transferring files to <default-ubuntu-1404>
+I, [2016-11-06T21:34:16.539134 #19316]  INFO -- default-ubuntu-1404: -----> Running serverspec test suite
+I, [2016-11-06T21:34:16.654731 #19316]  INFO -- default-ubuntu-1404: /opt/chef/embedded/bin/ruby -I/tmp/verifier/suites/serverspec -I/tmp/verifier/gems/gems/rspec-support-3.5.0/lib:/tmp/verifier/gems/gems/rspec-core-3.5.4/lib /opt/chef/embedded/bin/rspec --pattern /tmp/verifier/suites/serverspec/\*\*/\*_spec.rb --color --format documentation --default-path /tmp/verifier/suites/serverspec
+I, [2016-11-06T21:34:17.149459 #19316]  INFO -- default-ubuntu-1404: 
+I, [2016-11-06T21:34:17.150078 #19316]  INFO -- default-ubuntu-1404: Port "80"
+I, [2016-11-06T21:34:17.287267 #19316]  INFO -- default-ubuntu-1404: [32m  should be listening[0m
+I, [2016-11-06T21:34:17.287985 #19316]  INFO -- default-ubuntu-1404: 
+I, [2016-11-06T21:34:17.288672 #19316]  INFO -- default-ubuntu-1404: Command "apachectl -M"
+I, [2016-11-06T21:34:17.289474 #19316]  INFO -- default-ubuntu-1404:   stdout
+I, [2016-11-06T21:34:17.330893 #19316]  INFO -- default-ubuntu-1404: [32m    should contain "wsgi_module"[0m
+I, [2016-11-06T21:34:17.331515 #19316]  INFO -- default-ubuntu-1404: 
+I, [2016-11-06T21:34:17.331998 #19316]  INFO -- default-ubuntu-1404: Command "curl -X POST --silent --output /dev/null --write-out "%{http_code}" -F 'username=ad1' -F 'password=ad1pw' http://localhost/"
+I, [2016-11-06T21:34:17.332888 #19316]  INFO -- default-ubuntu-1404:   stdout
+I, [2016-11-06T21:34:17.485549 #19316]  INFO -- default-ubuntu-1404: [32m    should contain "302"[0m
+I, [2016-11-06T21:34:17.486520 #19316]  INFO -- default-ubuntu-1404: 
+I, [2016-11-06T21:34:17.486925 #19316]  INFO -- default-ubuntu-1404: Finished in 0.33728 seconds (files took 0.4483 seconds to load)
+I, [2016-11-06T21:34:17.487515 #19316]  INFO -- default-ubuntu-1404: [32m3 examples, 0 failures[0m
+I, [2016-11-06T21:34:17.487720 #19316]  INFO -- default-ubuntu-1404: 
+I, [2016-11-06T21:34:17.524305 #19316]  INFO -- default-ubuntu-1404: Finished verifying <default-ubuntu-1404> (0m4.45s).
