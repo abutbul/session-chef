@@ -38,6 +38,6 @@ describe 'my-first-cookbook::default' do
 
     it 'creates and grants permissions to app db user' do
       sqlpopulate = chef_run.cookbook_file('/tmp/make_AARdb.sql')
-      expect(sqlpopulate).to notify('execute[CREATE USER]').to(:run).delayed
+      expect(sqlpopulate).to notify('execute[CREATE USER]').to(:run).immediately
     end
 end

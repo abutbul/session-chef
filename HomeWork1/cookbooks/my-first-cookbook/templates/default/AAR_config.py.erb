@@ -1,4 +1,4 @@
-CONNECTION_ARGS = {"host":"localhost", "user":"aarapp", "passwd":"7ERwzg7E", "db":"AARdb"}
+CONNECTION_ARGS = {"host":"<%=node['mycookbook']['app']['db_host']%>", "user":"<%=node['mycookbook']['app']['db_user']%>", "passwd":"<%=node['mycookbook']['app']['db_pass']%>", "db":"<%=node['mycookbook']['app']['db_name']%>"}
 
 SECRET_KEY = "Fwy/bz93akEt/AAL"
 

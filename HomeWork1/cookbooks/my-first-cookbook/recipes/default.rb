@@ -10,7 +10,6 @@ node['mycookbook']['packages'].each do |pkg|
   package pkg do
     action :install
     options '--force-yes'
-	not_if "dpkg -l | grep #{pkg} | grep ii" 
   end
 end
 execute 'Install python package' do
@@ -23,7 +22,7 @@ cookbook_file node['mycookbook']['app']['db_creation_script'] do
   action :create
   owner 'root'
   group 'root'
-  notifies :run, 'execute[CREATE USER]', :delayed
+  notifies :run, 'execute[CREATE USER]', :immediate
   notifies :run, 'execute[makeAARdb]', :immediate
 end
 
