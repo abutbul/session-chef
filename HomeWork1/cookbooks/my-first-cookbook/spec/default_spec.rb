@@ -6,13 +6,6 @@ describe 'my-first-cookbook::default' do
 
     let(:chef_run) { ChefSpec::SoloRunner.new(platform: 'ubuntu', version: '14.04').converge(described_recipe) }
     
-    before do
-      stub_command("dpkg -l | grep python-pip | grep ii").and_return(0)
-      stub_command("dpkg -l | grep libapache2-mod-wsgi | grep ii").and_return(0)
-      stub_command("dpkg -l | grep python-mysqldb | grep ii").and_return(0)
-    end
-    
-    
     it 'creates apache config template with a VirtualHost definition' do
       expect(chef_run).to create_template('/etc/apache2/sites-enabled/AAR-apache.conf')
       expect(chef_run).to render_file('/etc/apache2/sites-enabled/AAR-apache.conf').with_content {|content|
